@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.algoritmusistemos.gvdis.web.persistence.AprDbObjektas" table="GVDIS_APR_DB_OBJEKTAI">
+		<id name="id" type="long" column="ID">
+		<generator class="sequence">
+			<param name="sequence">APR_DB_SEQ</param>
+		</generator>
+		</id>
+		<property name="modulisId" type="long" column="MODULIS_ID"/>
+		<property name="objektas" type="text" column="OBJEKTAS"/>
+		<property name="parametrai" type="text" column="PARAMETRAI"/>
+		<property name="tipas" type="text" column="TIPAS"/>
+		<property name="schema" type="text" column="SCHEMA"/>
+		<property name="komentarai" type="text" column="KOMENTARAI"/>
+    </class>
+</hibernate-mapping>

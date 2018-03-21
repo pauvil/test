@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.SprendimasKeistiDuomenis" table="GVDIS_SPRENDIMAI" dynamic-update="true">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">GVSPR_SEQ</param>
+			</generator>
+		</id>
+		<property name="insDate" 					type="timestamp" column="INS_DATA"/>
+		<property name="updDate" 					type="timestamp" column="UPD_DATA"/>
+		<property name="regNr"						type="text" 			column="REG_NR" />
+		<property name="data"						type="timestamp" 		column="DATA" />	
+		<property name="tipas"						type="long" 			column="TIPAS" />
+		<property name="naikinimoData"				type="timestamp" 		column="NAIKINIMO_DATA" />	
+		<property name="prieme"						type="text" 			column="PRIEME" />
+		<property name="pastabos"					type="text" 			column="PASTABOS" />		
+		<set name="gyvenamosiosVietos" table="GVDIS_SPREND_ASMENYS">
+   		    <key column="GVSPR_ID"/>
+   	    	<many-to-many class="com.algoritmusistemos.gvdis.web.persistence.GyvenamojiVieta">
+   	    		<column name="GR_GVT_NR" />
+   	    		<column name="GR_GVT_ASM_NR" />
+   	    	</many-to-many>
+	    </set> 
+	 	<many-to-one name="istaiga" class="com.algoritmusistemos.gvdis.web.persistence.Istaiga" column="GVIST_ID" />	
+		<many-to-one name="priezastis" class="com.algoritmusistemos.gvdis.web.persistence.ZinynoReiksme" column="GVZR_ID" />	 		  
+		<one-to-one name="prasymas" class="com.algoritmusistemos.gvdis.web.persistence.PrasymasKeistiDuomenis" property-ref="sprendimas" />
+	</class>
+</hibernate-mapping>

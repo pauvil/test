@@ -1,0 +1,140 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from GVDISDeclarationServiceService WSDL service -->
+
+  <service name="GVDISDeclarationService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.gvdis.algoritmusistemos.com"/>
+      <parameter name="wsdlServiceElement" value="GVDISDeclarationServiceService"/>
+      <parameter name="schemaQualified" value="http://ws.gvdis.algoritmusistemos.com"/>
+      <parameter name="wsdlServicePort" value="GVDISDeclarationService"/>
+      <parameter name="className" value="com.algoritmusistemos.gvdis.ws.GVDISDeclarationServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="GVDISDeclarationService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="saveDeclarationInHomelessRegister" qname="operNS:SaveDeclarationInHomelessRegister" xmlns:operNS="http://ws.gvdis.algoritmusistemos.com" returnQName="retNS:SaveDeclarationInHomelessRegisterReturn" xmlns:retNS="http://ws.gvdis.algoritmusistemos.com" returnType="rtns:SaveDeclarationInHomelessRegisterResult" xmlns:rtns="http://ws.gvdis.algoritmusistemos.com" soapAction="" >
+        <parameter qname="pns:ankstesnePavarde" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pilietybe" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savivaldybe" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensKodas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoRusis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoNumeris" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentaIsdave" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pastabos" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savivaldybePastabos" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:priezastys" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVieta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVietaAdresas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVietaId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:kitaGyvenamojiVietaAprasymas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:atvykoIsUzsienioSalis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:atvykoIsUzsienioPapildomai" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:deklaracijaPateikta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikejoVardas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikejoPavarde" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:deklaravimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:processId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="savePlaceOfForeignDeclaration" qname="operNS:SavePlaceOfForeignDeclaration" xmlns:operNS="http://ws.gvdis.algoritmusistemos.com" returnQName="retNS:SavePlaceOfForeignDeclarationReturn" xmlns:retNS="http://ws.gvdis.algoritmusistemos.com" returnType="rtns:SavePlaceOfForeignDeclarationResult" xmlns:rtns="http://ws.gvdis.algoritmusistemos.com" soapAction="" >
+        <parameter qname="pns:ankstesnePavarde" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pilietybe" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensKodas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoRusis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoNumeris" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentaIsdave" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoIsdavimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pastabos" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:isvykimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVieta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVietaAdresas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVietaId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:kitaGyvenamojiVietaAprasymas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:numatomaUzsienioSalis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:numatomaUzsienioSalisPlaciau" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:deklaracijaPateikta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikejoVardas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikejoPavarde" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:deklaravimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:processId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="savePlaceOfDeclaration" qname="operNS:SavePlaceOfDeclaration" xmlns:operNS="http://ws.gvdis.algoritmusistemos.com" returnQName="retNS:SavePlaceOfDeclarationReturn" xmlns:retNS="http://ws.gvdis.algoritmusistemos.com" returnType="rtns:SavePlaceOfDeclarationResult" xmlns:rtns="http://ws.gvdis.algoritmusistemos.com" soapAction="" >
+        <parameter qname="pns:ankstesnePavarde" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pilietybe" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensKodas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoRusis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoNumeris" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentaIsdave" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:asmensDokumentoIsdavimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:atvykimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pastabos" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVieta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVietaAdresas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:ankstesneGyvenamojiVietaId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:kitaGyvenamojiVietaAprasymas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:atvykoIsUzsienioSalis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:atvykoIsUzsienioPapildomai" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:deklaracijaPateikta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikejoVardas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:pateikejoPavarde" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:deklaravimoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:rysisSuGv" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:rysysSuGvKita" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savininkoTipas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savininkoIgaliotinis" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:jurAsmKodas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:jurAsmPavadinimas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:jurAsmAdresas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savVardas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savAsmKodas" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:jurGyvenamojiVieta" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:savininkoParasoData" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:addressId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:addressType" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:processId" xmlns:pns="http://ws.gvdis.algoritmusistemos.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="savePlaceOfDeclaration saveDeclarationInHomelessRegister savePlaceOfForeignDeclaration"/>
+
+      <typeMapping
+        xmlns:ns="http://ws.gvdis.algoritmusistemos.com"
+        qname="ns:SaveDeclarationInHomelessRegisterResult"
+        type="java:com.algoritmusistemos.gvdis.ws.SaveDeclarationInHomelessRegisterResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://ws.gvdis.algoritmusistemos.com"
+        qname="ns:DefaultMessage"
+        type="java:com.algoritmusistemos.gvdis.ws.DefaultMessage"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://ws.gvdis.algoritmusistemos.com"
+        qname="ns:SavePlaceOfForeignDeclarationResult"
+        type="java:com.algoritmusistemos.gvdis.ws.SavePlaceOfForeignDeclarationResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="http://ws.gvdis.algoritmusistemos.com"
+        qname="ns:SavePlaceOfDeclarationResult"
+        type="java:com.algoritmusistemos.gvdis.ws.SavePlaceOfDeclarationResult"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

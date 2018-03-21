@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.Asmuo" table="GVDISVW_ASMENYS_VARDAI" mutable="false">
+		<id name="asmNr" 					type="long" 			column="ASM_NR" /> 
+		<property name="asmGimData" 		type="date"  update="false"		column="ASM_GIM_DATA" />	
+		<property name="asmLytis" 			type="text" 			column="ASM_LYTIS" /> 
+		<property name="asmKodas" 			type="long" 			column="ASM_KODAS" />
+		<property name="asmMirtiesData"		type="timestamp" 		column="ASM_MIRTIES_DATA" />			
+		<property name="vardas"				type="text" 		column="AVD_VARDAS" />	
+		<property name="pavarde"			type="text" 		column="AVD_PAVARDE" />	
+		<property name="avdNr"				type="long" 		column="AVD_NR" />	
+
+		<set name="gyvenamosiosVietos" inverse="true" order-by="nvl(gvt_data_nuo, '1000.01.01') desc">
+			<key column="gvt_asm_nr"/> 
+			<one-to-many class="com.algoritmusistemos.gvdis.web.persistence.GyvenamojiVieta" not-found="ignore" />
+		</set>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,215 @@
+body, td {
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+th {
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+h2 {
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+.addresslist a {
+	font-size: 12px;
+}
+a.spec {
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000;
+	text-decoration: underline;
+}
+a {
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #000;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+hr {
+	border: 0px;
+	background-color: #7890AA;
+	color: #7890AA;
+	height: 2px;
+}
+.line1 {
+	background-color: #7E7E7E;
+}
+.graybg {
+	background-color: #F2F2F2;
+}
+.darkbg, .darkbg A {
+	background-color: #7890AA;
+	padding-left: 4px;
+	color: #FFFFFF;
+}
+.menu1 {
+	border-bottom: 1px solid #D3D3D3;
+	padding-left: 15px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	background-color: #E2E6F1;
+	font-weight: bold;
+	background-image: url('../img/menu.gif');
+	background-repeat: no-repeat;
+	background-position: 3 50%; 
+	cursor: pointer;
+}
+.menu2 {
+	border-bottom: 1px solid #D3D3D3;
+	padding-left: 15px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	background-color: #F2F2F2;
+	background-image: url('../img/menu.gif');
+	background-repeat: no-repeat;
+	background-position: 3 50%; 
+}
+.menu_active {
+	border-bottom: 1px solid #D3D3D3;
+	padding-left: 15px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	background-color: #d2d2d2;
+	background-image: url('../img/menu.gif');
+	background-repeat: no-repeat;
+	background-position: 3 50%; 
+}
+
+.heading {
+	padding-left: 10px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-bottom: 2px solid #7890AA;
+}
+
+.heading {
+    width: 100%;
+    padding-left: 10px;
+    font-family: Arial, Verdana, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333333;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid #7890AA;
+}
+
+.heading2 {
+	padding-left: 10px;
+	padding-bottom: 0px;
+	font-family: Arial, Verdana, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333333;
+}
+
+.heading3 {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-bottom: 2px solid #CCCCCC;
+    padding-left: 5px;
+    margin: 5px 0 7px 0;
+}
+
+.inputFixed {
+	font-family: Courier;
+	font-size: 14px;
+	border: 1px solid #000;
+	text-transform: uppercase;
+	letter-spacing: 12px;
+	background-image: url('../img/formgb.gif');
+	padding-left: 4px;
+}
+.input {
+	font-size: 11px;
+	border: 1px solid #7D7D7D;
+	width: 300px;
+}
+.button {
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	background-color: #7890AA;
+	height: 18px;
+	border: 1px solid;
+	border-bottom-color: #7D7D7D;
+	border-left-color: #D3D3D3;
+	border-right-color: #7D7D7D;
+	border-top-color: #D3D3D3;
+	color: white;
+	width: 300px;
+}
+.data_table {
+    background-color: #B8B4B8;
+}
+.data_table td {
+    background-color: #FFFFFF;    
+}
+.data_table th, .data_table th A {
+    background-color: #7890AA;
+    color: #FFF;
+}
+.table_row td {
+    background-color: #FFFFFF;        
+}
+.table_row_on td {
+    background-color: #EFEFEF;
+}
+.lovbtn {
+	font-family: tahoma, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	background-color: #7890AA;
+	height: 18px;
+	border: 1px solid;
+	border-bottom-color: #7D7D7D;
+	border-left-color: #D3D3D3;
+	border-right-color: #7D7D7D;
+	border-top-color: #D3D3D3;
+	color: white;
+	width: 18px;
+}
+ul.img {
+    text-decoration: none;
+    list-style-image: url('../img/arrow.gif');
+}
+ul.img li {
+    padding-bottom: 2px;
+}
+.input_select {
+	font-family: verdana,tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	height: 16px;
+	border: 1px solid #aaaaaa;
+	background-color: #e8e8e8;	
+}
+.message1 {
+	padding-left: 15px;
+	padding-right: 2px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	background-color: #ffffff;
+	font-weight: bold;
+}
+.error {
+	font-family: verdana,tahoma, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	height: 16px;
+	color: #FF0000;
+	font-weight: bold;
+}
+.aprasymastext {
+	font-size: 11px;
+	border: 1px solid #7D7D7D;
+	width: 800px;

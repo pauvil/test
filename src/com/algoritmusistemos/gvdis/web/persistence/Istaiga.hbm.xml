@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.Istaiga" table="GVDIS_ISTAIGOS" dynamic-update="true">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">GVIST_SEQ</param>
+			</generator>
+		</id>
+	<property name="tipas"									type="long" 			column="TIPAS" />
+	<property name="pavadinimas"							type="text" 			column="PAVADINIMAS" />
+	<property name="pilnasPavadinimas"						type="text"	 			column="PILNAS_PAVADINIMAS" />
+	<property name="oficialusPavadinimas"					type="text"	 			column="OFICIALUS_PAVADINIMAS" />
+	<property name="pastabos"								type="text" 			column="PASTABOS" />
+	<property name="rekvizSpausdinimui"						type="text" 			column="IST_REKVIZ_SPAUSD" />
+  	<set name="istaigos" inverse="true" cascade="delete" order-by="EILES_NR">
+		<key column="GVIST_ID_TEV"/> 
+		<one-to-many class="com.algoritmusistemos.gvdis.web.persistence.Istaiga"/>
+	</set>
+	<many-to-one name="istaiga" column="GVIST_ID_TEV" /> 
+
+</class>
+</hibernate-mapping>

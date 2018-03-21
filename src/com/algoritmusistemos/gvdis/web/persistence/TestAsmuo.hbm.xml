@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.TestAsmuo" table="GVDISVW_ASMENYS_VARDAI" dynamic-update="true">
+		<id name="asmNr" 					type="long" 			column="ASM_NR" /> 
+		<property name="asmGimData" 		type="date" 		column="ASM_GIM_DATA" />		
+		<property name="asmKodas" 			type="long" 			column="ASM_KODAS" />		
+	</class>
+</hibernate-mapping>

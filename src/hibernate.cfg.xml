@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</property>
+ 		<property name="show_sql">false</property>
+		<property name="org.hibernate.SQL">true</property> 
+		<property name="org.hibernate.type">true</property> 
+		
+<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+<property name="hibernate.cache.use_query_cache">false</property>		
+		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/Valstybe.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/LaikinasAsmuo.hbm.xml" />	 
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/Zinynas.hbm.xml" />	 		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/ZinynoReiksme.hbm.xml" />	 				
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/Deklaracija.hbm.xml" />
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/Istaiga.hbm.xml" />	
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/TeritorinisVienetas.hbm.xml" />	
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AdresinisVienetas.hbm.xml" />			
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/GyvenamojiVieta.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/Asmuo.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/TestAsmuo.hbm.xml" />	
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/SprendimasKeistiDuomenis.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/PrasymasKeistiDuomenis.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/GvPazyma.hbm.xml" />
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/SavPazyma.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/GvnaPazyma.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AsmensDokumentas.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/Asmenvardis.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprMeniuGrupe.hbm.xml" />	
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprMeniuPunktas.hbm.xml" />
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprModulis.hbm.xml" />	
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprModulisJN.hbm.xml" />	
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprDbObjektas.hbm.xml" />
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprDbObjektasJN.hbm.xml" />		
+		<mapping resource="com/algoritmusistemos/gvdis/web/persistence/AprVersija.hbm.xml" />		
+</session-factory>
+</hibernate-configuration>

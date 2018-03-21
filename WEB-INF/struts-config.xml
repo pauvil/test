@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+
+<!-- ================================================ Form Bean Definitions -->
+    <form-beans>
+        <form-bean name="LoginForm"   type="com.algoritmusistemos.gvdis.web.forms.LoginForm" />
+        <form-bean name="LaikiniAsmenysDeklaracijaForm"   type="com.algoritmusistemos.gvdis.web.forms.LaikiniAsmenysDeklaracijaForm" />
+        <form-bean name="AsmKodasForm"   type="com.algoritmusistemos.gvdis.web.forms.AsmKodasForm" />        
+        <form-bean name="AtvDeklaracijaForm"   type="com.algoritmusistemos.gvdis.web.forms.AtvDeklaracijaForm" /> 
+        <form-bean name="IsvDeklaracijaForm"   type="com.algoritmusistemos.gvdis.web.forms.IsvDeklaracijaForm" />
+        <form-bean name="GvnaDeklaracijaForm"   type="com.algoritmusistemos.gvdis.web.forms.GvnaDeklaracijaForm" />               
+        <form-bean name="ReportsForm"   type="com.algoritmusistemos.gvdis.web.forms.ReportsForm" />               
+        <form-bean name="ChangePasswordForm"   type="com.algoritmusistemos.gvdis.web.forms.ChangePasswordForm" />
+        <form-bean name="QueryPersonForm"   type="com.algoritmusistemos.gvdis.web.forms.QueryPersonForm" />
+        <form-bean name="QueryAddressForm"   type="com.algoritmusistemos.gvdis.web.forms.QueryAddressForm" />
+        <form-bean name="JournalForm"   type="com.algoritmusistemos.gvdis.web.forms.JournalForm" />
+        <form-bean name="EditIstaigaForm"   type="com.algoritmusistemos.gvdis.web.forms.EditIstaigaForm" />
+        <form-bean name="ZinynoReiksmeForm"   type="com.algoritmusistemos.gvdis.web.forms.ZinynoReiksmeForm" />
+        <form-bean name="PrasymasForm"   type="com.algoritmusistemos.gvdis.web.forms.PrasymasForm" />
+        <form-bean name="FilterPrasymaiForm"   type="com.algoritmusistemos.gvdis.web.forms.FilterPrasymaiForm" />
+        <form-bean name="SprendimasForm"   type="com.algoritmusistemos.gvdis.web.forms.SprendimasForm" />
+        <form-bean name="PazymaForm"   type="com.algoritmusistemos.gvdis.web.forms.PazymaForm" />
+        <form-bean name="QueryEditDataForm"   type="com.algoritmusistemos.gvdis.web.forms.QueryEditDataForm" />
+        <form-bean name="TestAsmKodasForm1"   type="com.algoritmusistemos.gvdis.web.forms.TestAsmKodasForm1" />
+        <form-bean name="TestDeklaracijaForm"   type="com.algoritmusistemos.gvdis.web.forms.TestDeklaracijaForm" />
+		<form-bean name="DeklaracijaInternetuForm"   type="com.algoritmusistemos.gvdis.web.forms.DeklaracijaInternetuForm" />
+        <form-bean name="Report13Form"   type="lt.solver.gvdis.web.forms.Report13Form" />
+        <form-bean name="GvdisAprasymasForm"   type="com.algoritmusistemos.gvdis.web.forms.GvdisAprasymasForm" />
+        <form-bean name="EditGvdisAprDbObjektaiForm"   type="com.algoritmusistemos.gvdis.web.forms.EditGvdisAprDbObjektaiForm" />
+        <form-bean name="EditGvdisAprasymasForm"   type="com.algoritmusistemos.gvdis.web.forms.EditGvdisAprasymasForm" />
+        <form-bean name="CreateGvdisAprasymasForm"   type="com.algoritmusistemos.gvdis.web.forms.CreateGvdisAprasymasForm" />
+        
+                       
+
+    </form-beans>
+
+<!-- ========================================= Global Exception Definitions -->
+
+    <global-exceptions>
+		<exception
+            key="permission.denied"
+            type="com.algoritmusistemos.gvdis.web.exceptions.PermissionDeniedException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />
+        <exception
+            key="database.error"
+            type="com.algoritmusistemos.gvdis.web.exceptions.DatabaseException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />
+        <exception
+            key="internal.error"
+            type="com.algoritmusistemos.gvdis.web.exceptions.InternalException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />
+		<exception
+            key="objectnotfound.error"
+            type="com.algoritmusistemos.gvdis.web.exceptions.ObjectNotFoundException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />                       
+		<exception
+            key="general.error"
+            type="java.lang.Exception"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />                       
+		<exception
+            key="general.error"
+            type="java.lang.NoSuchMethodException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />    
+		<exception
+            key="general.error"
+            type="org.apache.jasper.JasperException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />    
+		<exception
+            key="general.error"
+            type="javax.servlet.ServletException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" />    
+		<exception
+            key="general.error"
+            type="javax.servlet.jsp.JspException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" /> 
+		<exception
+            key="general.error"
+            type="org.hibernate.HibernateException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" /> 
+		<exception
+            key="general.error"
+            type="org.hibernate.NonUniqueResultException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" /> 
+		<exception
+            key="general.error"
+            type="org.hibernate.ObjectNotFoundException"
+            handler="com.algoritmusistemos.gvdis.web.exceptions.GvdisExceptionHandler" /> 
+    </global-exceptions>
+<!-- =========================================== Global Forward Definitions -->
+
+    <global-forwards>
+        <forward name="welcome" path="/first.do" />
+        <forward name="closeWindow" path="/pages/closeWindowLayout.jsp" />
+		<forward name="exception" path="/pages/index.jsp" />
+    </global-forwards>
+
+<!-- =========================================== Action Mapping Definitions -->
+
+    <action-mappings>
+    <!-- <action path="/test"
+            type="com.algoritmusistemos.gvdis.web.actions.test.TestAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp"/>  
+    </action> -->
+    <action path="/first"
+            type="com.algoritmusistemos.gvdis.web.actions.FirstPageAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp"/>          
+    </action>
+    <action path="/login"
+            type="com.algoritmusistemos.gvdis.web.actions.logging.LoginAction"
+            name="LoginForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+		<forward name="continue" path="/first.do" redirect="true"/>          
+    </action>
+    <action path="/loginform"
+    		type="com.algoritmusistemos.gvdis.web.actions.logging.LoginFormAction"
+    		scope="session">
+    		<forward name="continue" path="/pages/index.jsp" />
+    </action>
+    <action path="/logout"
+            type="com.algoritmusistemos.gvdis.web.actions.logging.LogoutAction"
+            scope="request">
+    	<forward name="continue" path="/first.do" redirect="true"/>          
+    </action>    
+    <action path="/changepasswordform"
+            type="com.algoritmusistemos.gvdis.web.actions.logging.ChangePasswordFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/changepassword"
+            type="com.algoritmusistemos.gvdis.web.actions.logging.ChangePasswordAction"
+            name="ChangePasswordForm"
+            input="/changepasswordform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/changepassworddone.do" redirect="true"/>          
+    </action>
+    <action path="/changepassworddone"
+            type="com.algoritmusistemos.gvdis.web.actions.logging.ChangePasswordDoneAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/querypersonform"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryPersonFormAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/querypersonresults"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryPersonResultsAction"
+            name="QueryPersonForm"
+            input="/querypersonform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/queryaddressform"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryAddressFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/queryaddressresults"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryAddressResultsAction"
+            name="QueryAddressForm"
+            input="/queryaddressform.do"
+            validate="true"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/queryviewdata"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryViewDataAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/addressbrowser"
+            type="com.algoritmusistemos.gvdis.web.actions.query.AddressBrowserAction"
+            scope="request">
+    	<forward name="continue" path="/pages/popup.jsp" />     
+    </action>  
+     <action path="/addPrasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.AddPrasymasAction"
+            name="FilterPrasymaiForm"
+            scope="request">
+    	<forward name="continue" path="/pages/popup.jsp" />     
+    </action> 
+    <action path="/addPrasymasResult"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.AddPrasymasResultAction"
+            
+            scope="request">
+    	<forward name="continue" path="/pages/popup.jsp" />     
+    </action>
+    
+    <action path="/journal"
+            type="lt.solver.gvdis.web.actions.zurnalai.ZurnalaiAction"
+            name="JournalForm"
+            scope="session"
+            input="/pages/index.jsp"
+            validate="true">
+    		<forward name="continue" path="/pages/index.jsp"/>          
+    </action>
+     
+    <!-- 
+	<action path="/journal"
+            type="com.algoritmusistemos.gvdis.web.actions.journals.JournalAction"
+            name="JournalForm"
+            scope="session"
+            input="/pages/index.jsp"
+            validate="true">
+    		<forward name="continue" path="/pages/index.jsp"/>          
+    </action>
+     -->
+    <action path="/report"
+            type="com.algoritmusistemos.gvdis.web.actions.ataskaitos.ReportAction"
+            name="ReportsForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/report11"
+            type="com.algoritmusistemos.gvdis.web.actions.ataskaitos.ReportAction"
+            name="ReportsForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/report13"
+            type="lt.solver.gvdis.web.actions.ataskaitos.Report13Action"
+            name="Report13Form"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/istaigos"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.ListIstaigosAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/editistaigaform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditIstaigaFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editistaiga"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditIstaigaAction"
+            name="EditIstaigaForm"
+            input="/editistaigaform.do"
+            validate="false"
+            scope="request">
+    	<forward name="continue" path="/istaigos.do" redirect="true"/>          
+    </action>
+    <action path="/zinynai"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.ListZinynaiAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/zinynoreiksmes"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.ListZinynoReiksmesAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/createzinynoreiksmeform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.CreateZinynoReiksmeFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/createzinynoreiksme"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.CreateZinynoReiksmeAction"
+            name="ZinynoReiksmeForm"
+            input="/createzinynoreiksmeform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/zinynoreiksmes.do" redirect="true"/>          
+    </action>
+    <action path="/deletezinynoreiksme"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.DeleteZinynoReiksmeAction"
+            scope="session">
+    	<forward name="continue" path="/zinynoreiksmes.do" redirect="true" />          
+    	<forward name="failure" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editzinynoreiksmeform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditZinynoReiksmeFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editzinynoreiksme"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditZinynoReiksmeAction"
+            name="ZinynoReiksmeForm"
+            input="/editzinynoreiksmeform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/zinynoreiksmes.do" redirect="true"/>          
+    </action>
+    <!--  2011-11-11 Tieto: GVDIS Aprasymas -->
+    <action path="/gvdisaprasymasform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.GvdisAprasymasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/gvdisaprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.GvdisAprasymasAction"
+            name="GvdisAprasymasForm"
+            input="gvdisaprasymasform.do"
+            validate="true"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />   
+    </action>
+        <action path="/gvdisaprasymasjn"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.GvdisAprasymasJnAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/creategvdisaprasymasform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.CreateGvdisAprasymasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/creategvdisaprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.CreateGvdisAprasymasAction"
+            name="CreateGvdisAprasymasForm"
+            input="/creategvdisaprasymasform.do"
+            validate="false"
+            scope="request">
+    	<forward name="continue" path="/gvdisaprasymas.do" redirect="true"/>          
+    </action>
+
+    
+    <action path="/editgvdisaprdbobjektaiform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditGvdisAprDbObjektaiFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editgvdisaprdbobjektai"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditGvdisAprDbObjektaiAction"
+            name="EditGvdisAprDbObjektaiForm"
+            input="/editgvdisaprdbobjektaiform.do"
+            validate="false"
+            scope="request">
+    	<forward name="continue" path="/gvdisaprasymas.do" redirect="true"/>          
+    </action>
+    
+        <action path="/deletegvdisaprdb"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.DeleteGvdisAprDbAction"
+            scope="session">
+    	<forward name="continue" path="/gvdisaprasymas.do" redirect="true" />          
+    	<forward name="failure" path="/pages/index.jsp" />          
+    </action>
+        
+    <action path="/editgvdisaprasymasform"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditGvdisAprasymasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editgvdisaprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.admin.EditGvdisAprasymasAction"
+            name="EditGvdisAprasymasForm"
+            input="/editgvdisaprasymasform.do"
+            validate="false"
+            scope="request">
+    	<forward name="continue" path="/gvdisaprasymas.do" redirect="true"/>          
+    </action>
+
+    <action path="/prasymai"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.ListPrasymaiAction"
+            name="FilterPrasymaiForm"
+            scope="session"
+            input="/pages/index.jsp"
+            validate="true">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/createprasymasform"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.CreatePrasymasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/createprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.CreatePrasymasAction"
+            name="PrasymasForm"
+            input="/createprasymasform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/prasymai.do" redirect="true"/>          
+    </action>
+    <action path="/editprasymasform"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.EditPrasymasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.EditPrasymasAction"
+            name="PrasymasForm"
+            input="/editprasymasform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/prasymai.do" redirect="true"/>          
+    </action>
+    <action path="/deleteprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.DeletePrasymasAction"
+            scope="session">
+    	<forward name="continue" path="/prasymai.do" redirect="true" />          
+    	<forward name="failure" path="/prasymai.do"/>          
+    </action>
+    <action path="/viewprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.ViewPrasymasAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/rejectprasymas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.RejectPrasymasAction"
+            scope="session">
+    	<forward name="continue" path="/prasymai.do" />          
+    </action>
+    <action path="/viewsprendimas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.ViewSprendimasAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/sprendimai"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.ListSprendimaiAction"
+            name="FilterPrasymaiForm"
+            scope="session"
+            input="/pages/index.jsp"
+            validate="true">
+    	<forward name="continue" path="/pages/index.jsp" />     
+    </action>    
+    <action path="/createsprendimasform"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.CreateSprendimasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/createsprendimas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.CreateSprendimasAction"
+            name="SprendimasForm"
+            input="/createsprendimasform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/sprendimai.do" redirect="true"/>          
+    </action>
+    <action path="/editsprendimasform"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.EditSprendimasFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/editsprendimas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.EditSprendimasAction"
+            name="SprendimasForm"
+            input="/editsprendimasform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/sprendimai.do" redirect="true"/>          
+    </action>
+    <action path="/addpersonform"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.AddPersonFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/popup.jsp" />          
+    </action>
+    <action path="/addperson"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.AddPersonAction"
+            name="AsmKodasForm"
+            input="/addpersonform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/popup.jsp" />          
+    </action>
+    <action path="/gvnapazymaform"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.GvnaPazymaFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/gvnapazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.GvnaPazymaAction"
+            name="PazymaForm"
+            input="/gvnapazymaform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/printgvnapazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.PrintGvnaPazymaAction"
+            scope="session">
+    </action>
+    <action path="/gvpazymaform"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.GvPazymaFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/gvpazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.GvPazymaAction"
+            name="PazymaForm"
+            input="/gvpazymaform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/printgvpazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.PrintGvPazymaAction"
+            scope="session">
+    </action>    
+    <action path="/mirepazymaform"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.MirePazymaFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/mirepazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.MirePazymaAction"
+            name="PazymaForm"
+            input="/mirepazymaform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/printmirepazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.PrintMirePazymaAction"
+            scope="session">
+    </action>
+    <action	path="/pazymosredirect"
+    		type="com.algoritmusistemos.gvdis.web.actions.pazymos.PazymosRedirectAction"
+    		scope="request" >
+    </action>    
+    <action path="/isvykepazymaform"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.IsvykePazymaFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/isvykepazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.IsvykePazymaAction"
+            name="PazymaForm"
+            input="/isvykepazymaform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/printisvykepazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.PrintIsvykePazymaAction"
+            scope="session">
+    </action>    
+    <action path="/savpazymaform"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.SavPazymaFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/savpazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.SavPazymaAction"
+            name="QueryAddressForm"
+            input="/savpazymaform.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/printsavpazyma"
+            type="com.algoritmusistemos.gvdis.web.actions.pazymos.PrintSavPazymaAction"
+            scope="session">
+    </action>
+    <action path="/queryeditdataform"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryEditDataFormAction"
+            scope="session">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/queryeditdata"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryEditDataAction"
+            name="QueryEditDataForm"
+            input="/queryeditdataform.do"
+            validate="true"
+            scope="request">
+    	<forward name="confirm" path="/pages/index.jsp" />          
+    	<forward name="continue" path="querypersonresults.do" />          
+    </action>
+    <action path="/querycreatedataform"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryCreateDataFormAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/querycreatedata"
+            type="com.algoritmusistemos.gvdis.web.actions.query.QueryCreateDataAction"
+            name="QueryEditDataForm"
+            input="/querycreatedataform.do"
+            validate="true"
+            scope="request">
+    	<forward name="confirm" path="/pages/index.jsp" />          
+    	<forward name="continue" path="querypersonresults.do" />          
+    </action>
+    
+    <action path="/AtvDeklaracijaAsmKodas"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.AtvDeklaracijaAsmKodasAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/IsvDeklaracijaAsmKodas"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.IsvDeklaracijaAsmKodasAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/GvnaDeklaracijaAsmKodas"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.GvnaDeklaracijaAsmKodasAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>        
+        
+	<action path="/DeklaracijaInternetu"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.internetu.DeklaracijaInternetuAction"
+            scope="request"
+            name="DeklaracijaInternetuForm"
+            input="/pages/index.jsp"
+            validate="true">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+       
+    <action path="/deklaracijaIntConfirm"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.internetu.DeklaracijaIntConfirmAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action> 
+    <action path="/deklaracijaIntReject"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.internetu.DeklaracijaIntRejectAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>             
+       
+
+    <action path="/DeklaracijaAsmKodasPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.DeklaracijaAsmKodasPerformAction"
+            name="AsmKodasForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" /> 
+    	<forward name="CONTINUE_WARNING" path="/pages/index.jsp" />     	         
+    </action>
+<!-- 
+    <action path="/AtvDeklaracijaAsmKodasPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.DeklaracijaAsmKodasPerformAction"
+            name="AsmKodasForm"
+            input="/AtvDeklaracijaAsmKodas.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" /> 
+    	<forward name="CONTINUE_WARNING" path="/pages/index.jsp" />     	         
+    </action>
+    <action path="/IsvDeklaracijaAsmKodasPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.DeklaracijaAsmKodasPerformAction"
+            name="AsmKodasForm"
+            input="/IsvDeklaracijaAsmKodas.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" /> 
+    	<forward name="CONTINUE_WARNING" path="/pages/index.jsp" />     	         
+    </action>
+    <action path="/GvnaDeklaracijaAsmKodasPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.DeklaracijaAsmKodasPerformAction"
+            name="AsmKodasForm"
+            input="/GvnaDeklaracijaAsmKodas.do"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" /> 
+    	<forward name="CONTINUE_WARNING" path="/pages/index.jsp" />     	         
+    </action>
+    
+	 <action path="/TestAsmKodasPerform1"
+            type="com.algoritmusistemos.gvdis.web.actions.test.TestAsmKodasPerform1Action"
+            name="TestAsmKodasForm1"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />     		         
+    </action>-->
+    <!--<action path="/TestEncoding"
+            type="com.algoritmusistemos.gvdis.web.actions.test.TestEncoding"
+            name="TestAsmKodasForm1"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />     		         
+    </action>-->
+    <!--<action path="/TestAtvDeklaracijaPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.test.TestAtvDeklaracijaPerformAction"
+            name="TestDeklaracijaForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />     		         
+    </action> -->
+    
+    <action path="/LaikiniAsmenysDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.LaikiniAsmenysDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/LaikiniAsmenysDeklaracijaPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.LaikiniAsmenysDeklaracijaPerformAction"
+            name="LaikiniAsmenysDeklaracijaForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continueIN"  path="/AtvDeklaracija.do"  redirect="true" /> 
+    	<forward name="continueOUT"  path="/IsvDeklaracija.do"  redirect="true" /> 
+    	<forward name="continueGVNA" path="/GvnaDeklaracija.do" redirect="true" /> 
+    </action>
+    
+    <action path="/AtvDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.AtvDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/AtvDeklaracijaPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.AtvDeklaracijaPerformAction"
+            name="AtvDeklaracijaForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="GENERATE_PDF" path="/pages/index.jsp" />
+    	<forward name="continue" path="/afterAtvDeklaracija.do" redirect="true" /> 
+    	<forward name="ALREADY_SAVED" path="/AtvDeklaracijaAsmKodas.do" redirect="true" />     	         
+    	<forward name="REJECT_DEKLARACIJA" path="/pages/index.jsp" /> 
+    </action>   
+
+     <action path="/generatePDF"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.PDF.GeneratePDFAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>    
+
+    
+    
+     <action path="/afterAtvDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.AfterAtvDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>    
+    <action path="/IsvDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.IsvDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/IsvDeklaracijaPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.IsvDeklaracijaPerformAction"
+            name="IsvDeklaracijaForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/afterIsvDeklaracija.do" redirect="true" />   
+    	<forward name="REJECT_DEKLARACIJA" path="/pages/index.jsp" /> 
+    	<forward name="GENERATE_PDF" path="/pages/index.jsp" />    	
+    	<forward name="ALREADY_SAVED" path="/IsvDeklaracijaAsmKodas.do" redirect="true" />     	       
+    </action>   
+     <action path="/afterIsvDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.AfterIsvDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    <action path="/GvnaDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.GvnaDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>
+    
+    
+    <action path="/TempCitizensList"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.TempCitizensListAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>    
+     <action path="/TempCitizen"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.TempCitizenAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>   
+ 
+      <action path="/DeleteTempCitizen"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.DeleteTempCitizenAction"
+            scope="request">
+    	<forward name="continue" path="/TempCitizensList.do" redirect="true" />    
+    	<forward name="CANNOT_DELETE_TEMP_CITIZEN" path="/pages/index.jsp" />     	    
+    </action>     
+    
+     
+   
+    
+    
+    <action path="/GvnaDeklaracijaPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.GvnaDeklaracijaPerformAction"
+            name="GvnaDeklaracijaForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/afterGvnaDeklaracija.do" redirect="true" />
+    	<forward name="GENERATE_PDF" path="/pages/index.jsp" />    	   
+    	<forward name="ALREADY_SAVED" path="/GvnaDeklaracijaAsmKodas.do" redirect="true" /> 
+    	<forward name="REJECT_DEKLARACIJA" path="/pages/index.jsp" /> 
+    </action>   
+     <action path="/afterGvnaDeklaracija"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.AfterGvnaDeklaracijaAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action> 
+     <action path="/NotCompletedDeclarationsList"
+            type="com.algoritmusistemos.gvdis.web.actions.nebaigtosdeklaracijos.NebaigtosPildytiDeklaracijosAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />          
+    </action>  
+     <action path="/DeleteDeclaration"
+            type="com.algoritmusistemos.gvdis.web.actions.nebaigtosdeklaracijos.DeleteDeclarationAction"
+            scope="request">
+    	<forward name="continue" path="/NotCompletedDeclarationsList.do" redirect="true" />
+    	<forward name="CANNOT_DELETE_DECLARATION" path="/pages/index.jsp" /> 
+    </action>  
+
+     <action path="/DeleteDeclarationBaigta"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.DeleteDeclarationBaigtaAction"
+            scope="request">
+    	<forward name="continue" path="/journal.do" redirect="true" />
+    	<forward name="CANNOT_DELETE_DECLARATION" path="/pages/index.jsp" /> 
+    </action>  
+    <action path="/DeleteSprendimas"
+            type="com.algoritmusistemos.gvdis.web.actions.sprendimai.DeleteSprendimasAction"
+            scope="request">
+    	<forward name="continue" path="/sprendimai.do" redirect="true" />
+    	<forward name="CANNOT_DELETE_DECLARATION" path="/pages/index.jsp" /> 
+    </action>      
+     <action path="/CompleteDeclaration"
+            type="com.algoritmusistemos.gvdis.web.actions.nebaigtosdeklaracijos.CompleteDeclarationAction"
+            scope="request">
+    	<forward name="IN_DECLARATION_FORM" path="/AtvDeklaracija.do" redirect="true" />
+    	<forward name="OUT_DECLARATION_FORM" path="/IsvDeklaracija.do" redirect="true" />    	
+    	<forward name="GVNA_DECLARATION_FORM" path="/GvnaDeklaracija.do" redirect="true" />    	
+    </action>      
+     <action path="/SelectPlace"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.SelectPlaceAction"
+            scope="request">
+    	<forward name="continue" path="/pages/selectPlace.jsp" />     
+    </action>    
+    <action path="/StepBack"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.StepBackAction"
+            scope="request">
+    	<forward name="continue" path="/pages/selectPlace.jsp" />     
+    </action> 
+
+    <action path="/DocumentsList"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.DocumentsListAction"
+            scope="request">
+    	<forward name="continue" path="/pages/documentsList.jsp" />     
+    </action> 
+    <action path="/editDeclaration"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.EditDeclarationAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" /> 
+		<forward name="CANNOT_EDIT_DECLARATION" path="/pages/index.jsp" />     	   
+    </action> 
+    
+    <action path="/inDeclarationView"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.InDeclarationViewAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />    
+    </action> 
+
+    <action path="/outDeclarationView"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.OutDeclarationViewAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />    
+    </action> 
+
+    <action path="/gvnaDeclarationView"
+            type="com.algoritmusistemos.gvdis.web.actions.deklaracijos.GvnaDeclarationViewAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />    
+    </action>
+
+    <action path="/LinkWithGR"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.LinkWithGRAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />    
+    </action>
+ 
+    <action path="/compareperson"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.ComparePersonAction"
+            name="AsmKodasForm"
+            input="/pages/index.jsp"
+            validate="true"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />    
+    </action> 
+ 
+     <action path="/LinkWithGRPerform"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.LinkWithGRPerformAction"
+            scope="request">
+    	<forward name="continue" path="/LinkWithGRMessage.do" redirect="true" />          
+    </action>    
+ 
+    <action path="/LinkWithGRMessage"
+            type="com.algoritmusistemos.gvdis.web.actions.tempCitizensList.LinkWithGRMessageAction"
+            scope="request">
+    	<forward name="continue" path="/pages/index.jsp" />    
+    </action>    
+    </action-mappings>
+
+<!-- ======================================== Message Resources Definitions -->
+    <message-resources parameter="MessageResources" />
+</struts-config>
+

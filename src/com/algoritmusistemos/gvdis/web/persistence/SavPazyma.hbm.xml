@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.SavPazyma" table="GVDIS_SAV_PAZYMOS" dynamic-update="true">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">SAVPAZ_SEQ</param>
+			</generator>
+		</id>
+	<property name="regNr"							type="text" 			column="REG_NR" />
+	<property name="pazymosData"					type="timestamp" 		column="PAZYMOS_DATA" />	
+	<property name="pastabos"						type="text" 			column="PASTABOS" />	
+	<property name="prasymoRegNr"					type="text" 			column="PRASYMO_REG_NR" />	
+ 	<many-to-one name="istaiga" class="com.algoritmusistemos.gvdis.web.persistence.Istaiga" column="GVIST_ID" />	
+ 	<property name="gvtAdvNr"					type="long" 			column="GVT_ADV_NR" />
+ 	<property name="gvtAtvNr"					type="long" 			column="GVT_ATV_NR" /> 	
+ 	<property name="gvtKampoNr"					type="long"				column="KAMPO_NR" />
+</class>
+</hibernate-mapping>

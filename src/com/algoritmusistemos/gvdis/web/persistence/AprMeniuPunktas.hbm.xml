@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.algoritmusistemos.gvdis.web.persistence.AprMeniuPunktas" table="GVDIS_APR_MENIU_PUNKTAI">
+		<id name="id" type="long" column="ID"/>
+		
+		<property name="meniuGrupeId" type="long" column="MENIU_GRUPE_ID"/>
+		<property name="pavadinimas" type="text" column="PAVADINIMAS"/>
+		
+    </class>
+</hibernate-mapping>

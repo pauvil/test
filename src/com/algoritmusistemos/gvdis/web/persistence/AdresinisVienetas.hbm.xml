@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.AdresinisVienetas" table="gvdisvw_adr_adv_vnt" >
+		
+		<id name="advNr"  				type="long"  		column="ADV_NR" />
+		<property name="advTevNr"		type="long"  		column="ADV_TEV_NR" />
+		<property name="terNr"			type="long"  		column="TER_NR" />
+		<property name="advNum"			type="text" 	 	column="ADV_NUM" />
+		<property name="advTip" 		type="text"  		column="ADV_TIP" />
+</class>
+</hibernate-mapping>

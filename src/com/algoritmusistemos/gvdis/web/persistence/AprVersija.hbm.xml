@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.algoritmusistemos.gvdis.web.persistence.AprVersija" table="GVDIS_APR_VERSIJOS">
+		<id name="versijosId" type="long" column="ID"/>
+
+		<property name="versija" 	type="text" column="VERSIJA"/>
+		<property name="data" 		type="date" column="DATA"/>
+		<property name="modulisId" 	type="long" column="MODULIS_ID"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.Asmenvardis" table="GVDISVW_ASMENVARDZIAI" dynamic-update="true">
+		<composite-id>
+			<key-property name="avdAsmNr" column="AVD_ASM_NR" type="long" /> 
+			<key-property name="avdNr" column="AVD_NR" type="long" /> 
+		</composite-id>
+		<property name="avdVardas" 				type="text" 			column="AVD_VARDAS" />	
+		<property name="avdPavarde" 			type="text" 			column="AVD_PAVARDE" />	
+	</class>
+</hibernate-mapping>

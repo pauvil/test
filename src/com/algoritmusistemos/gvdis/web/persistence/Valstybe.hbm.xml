@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.Valstybe" table="GVDISVW_VALSTYBES" dynamic-update="true">
+		<id name="kodas" 					type="text" 		column="VLS_KODAS" />		
+		<property name="pavadinimas" 		type="text" 		column="VLS_PAV" />
+		<property name="pilietybe" 			type="text" 		column="VLS_PILIETYBE" />
+</class>
+</hibernate-mapping>

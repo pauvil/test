@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.algoritmusistemos.gvdis.web.persistence.AprModulisJN" table="GVDIS_APR_MODULIAI_JN">
+		<id name="id" type="long" column="ID"/>
+		
+		<property name="versijaId" 			type="long" column="VERSIJA_ID"/>
+		<property name="modulisId" 			type="long" column="MODULIS_ID"/>
+		<property name="aprasymas" 			type="text" column="APRASYMAS"/>
+		<property name="logikosAprasymas" 	type="text" column="LOGIKOS_APRASYMAS"/>
+		<property name="sukurimoData" 		type="date" column="SUKURIMO_DATA"/>
+    </class>
+</hibernate-mapping>

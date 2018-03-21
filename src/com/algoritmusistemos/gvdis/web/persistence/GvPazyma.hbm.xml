@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.GvPazyma" table="GVDIS_GV_PAZYMOS" dynamic-update="true">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">GVPA_SEQ</param>
+			</generator>
+		</id>
+	<property name="regNr"							type="text" 			column="REG_NR" />
+	<property name="pazymosData"					type="timestamp" 		column="PAZYMOS_DATA" />	
+	<property name="pastabos"						type="text" 			column="PASTABOS" />
+	<property name="itrauktiVaikus"					type="long" 			column="ITRAUKTI_VAIKUS" />	
+	<property name="prasymoRegNr"					type="text" 			column="PRASYMO_REG_NR" />	
+	<property name="prasymoData"					type="timestamp" 		column="PRASYMO_DATA" />
+ 	<many-to-one name="istaiga" class="com.algoritmusistemos.gvdis.web.persistence.Istaiga" column="GVIST_ID" />	
+ 	<many-to-one name="gyvenamojiVieta" class="com.algoritmusistemos.gvdis.web.persistence.GyvenamojiVieta">	
+ 		<column name="GR_GVT_NR" />
+ 		<column name="GR_GVT_ASM_NR" />
+ 	</many-to-one>
+ 	<many-to-one name="deklaracija" class="com.algoritmusistemos.gvdis.web.persistence.Deklaracija" column="GVDKL_ID" />
+</class>
+</hibernate-mapping>

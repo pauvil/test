@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.GyvenamojiVieta" table="GVDISVW_GYVENAMOSIOS_VIETOS" dynamic-update="true">
+		<composite-id>
+			<key-property name="gvtNr" column="GVT_NR" /> 
+			<key-property name="gvtAsmNr" column="GVT_ASM_NR" /> 
+		</composite-id>
+		<property name="gvtTipas" 				type="text" 			column="GVT_TIPAS" />	
+		<property name="gvtVrtKodas" 			type="long" 			column="GVT_VRT_KODAS" />	
+		<property name="gvtDataNuo" 			type="timestamp" 		column="GVT_DATA_NUO" />
+		<property name="gvtDataIki" 			type="timestamp" 		column="GVT_DATA_IKI" />	
+		<property name="gvtRegData" 			type="timestamp" 		column="GVT_REG_DATA" />
+		<property name="gvtModData" 			type="timestamp" 		column="GVT_MOD_DATA" />
+		<property name="gvtPazyma" 				type="text" 			column="GVT_PAZYMA" />	
+		<property name="gvtAdrUzsenyje" 		type="text" 			column="GVT_ADR_UZSIENYJE" />	
+		<property name="gvtGatKodas" 			type="text" 			column="GVT_GAT_KODAS" />	
+		<property name="gvtNamas" 				type="text" 			column="GVT_NAMAS" />
+		<property name="gvtKorpusas" 			type="text" 			column="GVT_KORPUSAS" />
+		<property name="gvtButas" 				type="text" 			column="GVT_BUTAS" />	
+		<property name="gvtRejKodasTer" 		type="long" 			column="GVT_REJ_KODAS_TER" />
+		<property name="gvtRejKodoTipas"		type="text" 			column="GVT_REJ_KODO_TIPAS" />		
+		<property name="gvtAdvNr" 				type="long" 			column="GVT_ADV_NR" />
+		<property name="gvtAtvNr" 				type="long" 			column="GVT_ATV_NR" />
+		<property name="gvtKampoNr" 			type="long" 			column="GVT_KAMPO_NR" />
+		<property name="gvtGaliojaIki" 			type="timestamp" 		column="GVT_DKL_GALIOJA_IKI" />
+		<one-to-one name="deklaracija" class="com.algoritmusistemos.gvdis.web.persistence.Deklaracija" property-ref="gyvenamojiVieta" />
+		<many-to-one name="valstybe" class="com.algoritmusistemos.gvdis.web.persistence.Valstybe" column="GVT_VLS_KODAS" />
+		<many-to-one name="asmuo" class="com.algoritmusistemos.gvdis.web.persistence.Asmuo" column="GVT_ASM_NR" insert="false" update="false" />
+	    <set name="sprendimai" table="GVDIS_SPREND_ASMENYS" inverse="true">
+    	    <key>
+    	    	<column name="GR_GVT_NR" />
+    	    	<column name="GR_GVT_ASM_NR" />
+    	    </key>
+    	    <many-to-many column="GVSPR_ID" class="com.algoritmusistemos.gvdis.web.persistence.SprendimasKeistiDuomenis" />
+	    </set> 
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.algoritmusistemos.gvdis.web.persistence.AsmensDokumentas" table="GVDISVW_ASMENS_DOKUMENTAI" dynamic-update="true">
+		<id name="dokNr" 					type="long"			column="DOK_NR" /> 
+		<property name="dokRusis" 			type="text" 		column="DOK_RUSIS" />	
+		<property name="dokRusiesKodas"		type="text" 		column="DOK_DKR_KODAS" />	
+		<property name="dokNum" 			type="text" 		column="DOK_NUM" /> 
+		<property name="dokIsdData" 		type="timestamp" 	column="DOK_ISD_DATA" />
+		<property name="dokNegaliojaNuo"	type="timestamp" 	column="DOK_NEGALIOJA_NUO" />	
+		<property name="dokGaliojaIki"		type="timestamp" 	column="DOK_GALIOJA_IKI" />	
+		<property name="dokBusena"			type="text"		 	column="DOK_BUSENA" />	
+		<property name="dokTarnyba"			type="text"		 	column="DOK_TARNYBA" />	
+		<property name="tarnyba"			type="text"		 	column="TARNYBA" />
+		<property name="dokVlsKodas"		type="text"		 	column="DOK_VLS_KODAS" />
+	 	<many-to-one name="asmuo" 			class="com.algoritmusistemos.gvdis.web.persistence.Asmuo" 		column="DOK_ASM_NR" />		
+	 	<many-to-one name="valstybe" 		class="com.algoritmusistemos.gvdis.web.persistence.Valstybe" 	column="DOK_PIL_KODAS" />
+	</class>
+</hibernate-mapping>

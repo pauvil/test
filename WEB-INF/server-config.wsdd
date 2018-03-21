@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+ <globalConfiguration>
+  <parameter name="sendMultiRefs" value="true"/>
+  <parameter name="disablePrettyXML" value="true"/>
+  <parameter name="adminPassword" value="admin"/>
+  <!-- value="D:\Program Files\Apache Software Foundation\Tomcat 6.0\webapps\gvdis\WEB-INF\attachments"  -->
+  <parameter name="attachments.Directory" value="gvdis/attachments"/>
+  <parameter name="dotNetSoapEncFix" value="true"/>
+  <parameter name="enableNamespacePrefixOptimization" value="false"/>
+  <parameter name="sendXMLDeclaration" value="true"/>
+  <parameter name="sendXsiTypes" value="true"/>
+  <parameter name="attachments.implementation" value="org.apache.axis.attachments.AttachmentsImpl"/>
+  <parameter name="username" value="gvdis"/>
+  <parameter name="password" value="gvdis2"/>
+  <requestFlow>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="session"/>
+   </handler>
+   <handler type="java:org.apache.axis.handlers.JWSHandler">
+    <parameter name="scope" value="request"/>
+    <parameter name="extension" value=".jwr"/>
+   </handler>
+  </requestFlow>
+ </globalConfiguration>
+ <handler name="LocalResponder" type="java:org.apache.axis.transport.local.LocalResponder"/>
+ <handler name="URLMapper" type="java:org.apache.axis.handlers.http.URLMapper"/>
+ <handler name="Authenticate" type="java:org.apache.axis.handlers.SimpleAuthenticationHandler"/>
+ <service name="AdminService" provider="java:MSG">
+  <parameter name="allowedMethods" value="AdminService"/>
+  <parameter name="enableRemoteAdmin" value="false"/>
+  <parameter name="className" value="org.apache.axis.utils.Admin"/>
+  <namespace>http://xml.apache.org/axis/wsdd/</namespace>
+ </service>
+ <service name="Version" provider="java:RPC">
+  <parameter name="allowedMethods" value="getVersion"/>
+  <parameter name="className" value="org.apache.axis.Version"/>
+ </service>
+ <service name="GVDISDeclarationService" provider="java:RPC" style="wrapped" use="literal">
+  <parameter name="allowedMethods" value="*"/>
+  <parameter name="wsdlPortType" value="GVDISDeclarationService"/>
+  <parameter name="className" value="com.algoritmusistemos.gvdis.ws.GVDISDeclarationService"/>
+  <beanMapping languageSpecificType="java:com.algoritmusistemos.gvdis.ws.SaveDeclarationInHomelessRegisterResult" qname="ns1:SaveDeclarationInHomelessRegisterResult" xmlns:ns1="http://ws.algoritmusistemos.com"/>
+  <beanMapping languageSpecificType="java:com.algoritmusistemos.gvdis.ws.SavePlaceOfForeignDeclarationResult" qname="ns2:SavePlaceOfForeignDeclarationResult" xmlns:ns2="http://ws.algoritmusistemos.com"/>
+  <beanMapping languageSpecificType="java:com.algoritmusistemos.gvdis.ws.SavePlaceOfDeclarationResult" qname="ns3:SavePlaceOfDeclarationResult" xmlns:ns3="http://ws.algoritmusistemos.com"/>
+  <beanMapping languageSpecificType="java:com.algoritmusistemos.gvdis.ws.DefaultMessage" qname="ns4:DefaultMesasge" xmlns:ns4="http://ws.algoritmusistemos.com"/>
+  <beanMapping languageSpecificType="java:com.algoritmusistemos.gvdis.ws.ForeignAdress" qname="ns5:ForeignAdress" xmlns:ns5="http://ws.algoritmusistemos.com"/>
+  <beanMapping languageSpecificType="java:com.algoritmusistemos.gvdis.ws.Address" qname="ns6:Address" xmlns:ns6="http://ws.algoritmusistemos.com"/>
+  <namespace>http://ws.algoritmusistemos.com</namespace>
+ </service>
+ <transport name="http">
+  <requestFlow>
+   <handler type="URLMapper"/>
+   <handler type="java:org.apache.axis.handlers.http.HTTPAuthHandler"/>
+  </requestFlow>
+  <parameter name="qs:list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs:wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+  <parameter name="qs.list" value="org.apache.axis.transport.http.QSListHandler"/>
+  <parameter name="qs.method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs:method" value="org.apache.axis.transport.http.QSMethodHandler"/>
+  <parameter name="qs.wsdl" value="org.apache.axis.transport.http.QSWSDLHandler"/>
+ </transport>
+ <transport name="local">
+  <responseFlow>
+   <handler type="LocalResponder"/>
+  </responseFlow>
+ </transport>
+</deployment>

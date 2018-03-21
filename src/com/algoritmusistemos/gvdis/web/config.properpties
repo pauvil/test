@@ -1,0 +1,2 @@
+DB=jdbc:oracle:thin:@10.202.2.10:1521:LGR
+DBtest=jdbc:oracle:thin:@brig.solver.lt:1521:tam

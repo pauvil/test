@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.algoritmusistemos.gvdis.web.persistence.Deklaracija" table="GVDIS_DEKLARACIJOS" dynamic-update="true">
+	<id name="id" type="long" column="ID">
+		<generator class="sequence">
+			<param name="sequence">GVDKL_SEQ</param>
+		</generator>
+	</id>
+	<property name="regNr"									type="text" 			column="REG_NR" />
+	<property name="busena"									type="long" 			column="BUSENA" />
+	<property name="gavimoData"								type="timestamp" 		column="GAVIMO_DATA" />
+	<property name="deklaravimoData" 						type="timestamp" 		column="DEKLARAVIMO_DATA" />
+	<property name="dokumentoIsdavejas"						type="text" 			column="DOKUMENTO_ISDAVEJAS" />
+	<property name="dokumentoRusis"							type="text" 			column="DOKUMENTO_RUSIS" />
+	<property name="dokumentoNr"							type="text" 			column="DOKUMENTO_NR" />
+	<property name="dokumentoData"							type="timestamp" 		column="DOKUMENTO_DATA" />
+	<property name="dokumentoGaliojimas" 					type="timestamp" 		column="DOKUMENTO_GALIOJIMAS" />
+	<property name="pateike"								type="long"				column="PATEIKE" />
+	<property name="pateikeVardas"							type="text" 			column="PATEIKE_VARDAS" />
+	<property name="pateikePavarde"							type="text" 			column="PATEIKE_PAVARDE" />
+	<property name="pageidaujaPazymos"						type="long" 			column="PAGEIDAUJA_PAZYMOS" />
+	<property name="ankstesneVietaTipas"					type="long"				column="ANKSTESNE_VIETA_TIPAS" />
+	<property name="ankstesneVietaValstybesPastabos"		type="text" 			column="ANKSTESNE_VIETA_VALST_PAST" />
+	<property name="ankstesneVietaKita"						type="text" 			column="ANKSTESNE_VIETA_KITA" />
+	<property name="pastabos"								type="text" 			column="PASTABOS" />
+	<property name="gvtAsmNrAnkstesne"						type="long" 			column="GR_GVT_ASM_NR_ANKSTESNE" />
+	<property name="gvtNrAnkstesne"							type="long"				column="GR_GVT_NR_ANKSTESNE" />	
+	<property name="tmpGvtAdvNr"		 					type="long" 			column="TMP_GVT_ADV_NR" />
+	<property name="tmpGvtAtvNr"							type="long"				column="TMP_GVT_ATV_NR" />	
+	<property name="tmpGvtKampoNr"							type="long"				column="TMP_KAMPO_NR" />
+	<property name="insVartId"								type="text"				column="INS_VART" 	insert="false" update="false"/>	
+	<property name="updVartId"								type="text"				column="UPD_VART"	insert="false" update="false"/>	
+	<property name="ankstesnePavarde"						type="text"				column="ANKSTESNE_PAVARDE" />	
+	<property name="saltinis"								type="long"				column="SALTINIS" />
+	<property name="procesoid"								type="text"				column="PROCESOID"/>
+	<property name="atmetimoPriezastys"						type="text"				column="ATMETIMO_PRIEZASTIS"/>
+	<property name="gvIsvDklId"								type="long"				column="GVISVDKL_ID" insert="false" update="false"/>
+	<property name="telefonas"								type="text"				column="TELEFONAS"/>
+	<property name="email"									type="text"				column="EMAIL"/>	
+	<property name="unikalusPastatoNr"						type="text"				column="PASTATO_NUMERIS"/>
+	
+	
+	
+ 	<many-to-one name="laikinasAsmuo" class="com.algoritmusistemos.gvdis.web.persistence.LaikinasAsmuo" column="GVLAIK_ID" unique="true"/>		
+ 	<many-to-one name="asmuo" class="com.algoritmusistemos.gvdis.web.persistence.Asmuo" cascade="none" column="GR_ASM_NR" insert="false" update="false"/>		
+ 	
+ 	<many-to-one name="asmenvardis" class="com.algoritmusistemos.gvdis.web.persistence.Asmenvardis"> 
+   		<column name="GR_ASM_NR" />
+   		<column name="GR_AVD_NR" />
+	</many-to-one>
+	
+ 	<many-to-one name="istaiga" class="com.algoritmusistemos.gvdis.web.persistence.Istaiga" column="GVIST_ID" />	
+ 	<many-to-one name="pilietybe" class="com.algoritmusistemos.gvdis.web.persistence.Valstybe" column="GR_VALST_PILIETYBE_ID" />	 		
+ 	<many-to-one name="dokumentoTipas" class="com.algoritmusistemos.gvdis.web.persistence.ZinynoReiksme" column="GVZR_ID" />	 		  
+   	<many-to-one name="ankstesneGV" class="com.algoritmusistemos.gvdis.web.persistence.Valstybe" column="GR_VALST_ANKSTESNE_VIETA_ID" />	 		
+   	<many-to-one name="gyvenamojiVieta" class="com.algoritmusistemos.gvdis.web.persistence.GyvenamojiVieta">
+   		<column name="gr_gvt_nr" />
+   		<column name="gr_gvt_asm_nr" />
+   	</many-to-one>	
+  
+	<joined-subclass name="com.algoritmusistemos.gvdis.web.persistence.IsvykimoDeklaracija" table="GVDIS_ISV_DEKLARACIJOS">
+		<key column="ID"/>
+		<property name="isvykimoData"						type="timestamp" 		column="ISVYKIMO_DATA" />	
+		<property name="isvykimasAteityje" 			type="text"  			column="GID_ISVYKIMAS_ATEITYJE"/>
+	</joined-subclass>		
+
+	<joined-subclass name="com.algoritmusistemos.gvdis.web.persistence.GvnaDeklaracija" table="GVDIS_GVNA_DEKLARACIJOS">
+		<key column="ID"/>
+		<property name="savivaldybePastabos"				type="text" 			column="SAVIVALDYBE_PASTABOS" />	
+		<property name="priezastys"							type="text" 			column="PRIEZASTYS" />	
+		<property name="deklaracijaGalioja"					type="timestamp"		column="ITRAUKTI_IKI_DATA" />	
+ 		<many-to-one name="savivaldybe" class="com.algoritmusistemos.gvdis.web.persistence.TeritorinisVienetas" column="SAVIVALDYBE_NR" />	 		  				
+	</joined-subclass>	
+	
+	<joined-subclass name="com.algoritmusistemos.gvdis.web.persistence.AtvykimoDeklaracija" table="GVDIS_ATV_DEKLARACIJOS">
+		<key column="ID"/>
+		<property name="atvykimoData"				type="timestamp"		column="ATVYKIMO_DATA" />
+		<property name="rysysSuGv"					type="long"				column="RYSYS_SU_GV" />
+		<property name="rysysSuGvKita"				type="text"				column="RYSYS_SU_GV_KITA" />
+		<property name="savininkoTipas"				type="long"				column="SAVININKO_TIPAS" />
+		<property name="savininkoIgaliotinis"		type="long"				column="SAVININKO_IGALIOTINIS" />
+		<property name="jaPavadinimas"				type="text"				column="JA_PAVADINIMAS" />
+		<property name="jaKodas"					type="text"				column="JA_KODAS" />
+		<property name="jaBuveine"					type="text"				column="JA_BUVEINE" />
+		<property name="faVardasPavarde"			type="text"				column="FA_VARDAS_PAVARDE" />
+		<property name="faKodas"					type="text"				column="FA_KODAS" />
+		<property name="faAdresas"					type="text"				column="FA_ADRESAS" />
+		<property name="savininkoParasoData"		type="timestamp"		column="SAVININKO_PARASO_DATA" />				
+		<property name="deklaracijaGalioja"			type="timestamp"		column="GALIOJIMO_DATA" />
+	</joined-subclass>	
+</class>
+</hibernate-mapping>
